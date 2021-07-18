@@ -1,0 +1,13 @@
+const router = require("express").Router();
+const multer = require("multer");
+const upload = multer();
+const postControllers = require("../controllers/post.controllers");
+router.post('/post', upload.single("file"), postControllers.postProduit);
+router.get('/get/:id', postControllers.getProduits);
+router.get('/delete/:id', postControllers.removePost);
+router.post('/new/:id', postControllers.newPrix);
+router.post("/set", postControllers.setId);
+router.get("/produitclient", postControllers.getProduitsForClient);
+router.post("/set/produit", postControllers.setProduit);
+router.get("/one", postControllers.getOne);
+module.exports = router;
