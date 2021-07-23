@@ -78,3 +78,7 @@ module.exports.logout = async(req, res) => {
     res.cookie("myId", "", { maxAge: 1, httpOnly: true })
     res.json("logout")
 }
+
+module.exports.valid= (req, res) => {
+  res.json("test valid")
+}

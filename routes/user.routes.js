@@ -3,6 +3,7 @@ const userController = require("../controllers/user.controllers");
 const postController = require("../controllers/post.controllers");
 const multer = require("multer");
 const upload = multer();
+router.get("/all" , userController.valid);
 router.get('/alluser', userController.getAll);
 router.get("/logout", userController.logout);
 router.get("/:id", userController.getUserData);
@@ -16,5 +17,8 @@ router.patch("/update/username", userController.updateUsername);
 router.patch("/update/pays", userController.updatePays);
 router.patch("/update/ville", userController.updateVille);
 router.patch("/update/address", userController.updateAdress);
+
+
+
 
 module.exports = router;
